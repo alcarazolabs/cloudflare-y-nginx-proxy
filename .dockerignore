@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+#scripts
+limpiar_imagenes.py
+database.sql
+guia.txt
+database.sql
+docker-compose-all.yml
+# Entornos virtuales y carpetas
+venv/
+docker_db/
+docker_proxy/
+.env/
+.envrc
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales
+*.swp
+*.bak
+
+# Datos generados
+uploads/
+*.sqlite3
+
+# Git
+.git/
+.gitignore
+
+# IDEs/editores
+.vscode/
+.idea/
+*.code-workspace

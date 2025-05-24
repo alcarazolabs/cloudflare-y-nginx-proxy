@@ -1,0 +1,16 @@
+Pasos principales:
+- Crear red docker app-network.
+- Crear volumenes necesarios.
+
+Levantar los servicios en el siguiente orden:
+1. Levantar servicios de base de datos (docker_db)
+2. Levantar servicio webservice (latidoapp)
+3. Levantar nginx-proxy (docker_proxy)
+
+** Se levanta al final el gninx-proxy por que este va a inspeccionar
+los contenedores que ya estan arriba y tienen la variable VIRTUAL_HOST y
+asi creara los virtualhost, en caso de iniciarlo primero, este al intentar
+levantarse intentara generar los virtualhost pero no encontrara servicios
+que tengan esas variables es por ello que se inicia al final.
+
+Tutorial: https://youtu.be/x_mRq4-jP8M

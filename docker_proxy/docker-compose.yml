@@ -1,0 +1,26 @@
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - nginx_certs:/etc/nginx/certs:ro
+      - nginx_vhost:/etc/nginx/vhost.d
+      - nginx_html:/usr/share/nginx/html
+    networks:
+      - app-network
+volumes:
+  nginx_certs:
+    external: true
+  nginx_vhost:
+    external: true
+  nginx_html:
+    external: true
+
+networks:
+  app-network:
+    external: true
