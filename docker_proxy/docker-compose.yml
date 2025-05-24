@@ -11,6 +11,7 @@ services:
       - nginx_certs:/etc/nginx/certs:ro
       - nginx_vhost:/etc/nginx/vhost.d
       - nginx_html:/usr/share/nginx/html
+      - ./nginx_custom_conf.conf:/etc/nginx/conf.d/nginx_custom_conf.conf # Archivo de configuracion custom para permitir subir archivos maximo 10mbytes
     networks:
       - app-network
 volumes:
